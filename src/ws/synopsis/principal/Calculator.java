@@ -1,12 +1,13 @@
-package operaciones;
+package ws.synopsis.principal;
 
 import java.util.Scanner;
+import ws.synopsis.operations.*;
 
-public class Calculadora {
+public class Calculator {
 
 	public static void main(String[] args) {
 
-		Scanner leer = new Scanner(System.in);
+		Scanner leer2 = new Scanner(System.in);
 
 		System.out.println("Elegir la operacion a calcular");
 		System.out.println("1) Sumar");
@@ -14,28 +15,27 @@ public class Calculadora {
 		System.out.println("3) Multiplicar");
 		System.out.println("4) Dividir");
 		
-		int opc = leer.nextInt();
+		int opc = leer2.nextInt();
 
 		if (opc == 1) {
-			Suma suma = new Suma();
-			suma.cargar1();
-			suma.cargar2();
-			suma.operar();
+			Add add = new Add();
+			add.cargar1();
+			add.cargar2();
+			add.operar();
 			System.out.print("El resultado de la suma es:");
-			System.out.println("\n");
-			suma.mostrarResultado();
+			add.mostrarResultado();
 
 		}
-		if (opc == 2) {
+		else if (opc == 2) {
 
-			Resta resta = new Resta();
-			resta.cargar1();
-			resta.cargar2();
-			resta.operar();
+			Subtract subtract = new Subtract();
+			subtract.cargar1();
+			subtract.cargar2();
+			subtract.operar();
 			System.out.print("El resultado de la resta es:");
-			resta.mostrarResultado();
+			subtract.mostrarResultado();
 		}
-		if (opc == 3) {
+		else if (opc == 3) {
 			Multiplicacion multi1 = new Multiplicacion();
 			multi1.cargar1();
 			multi1.cargar2();
@@ -43,13 +43,16 @@ public class Calculadora {
 			System.out.println("El resultado de la multiplicacion es:");
 			multi1.mostrarResultado();
 		}
-		if (opc == 4) {
+		else if (opc == 4) {
 			Division div = new Division();
 			div.cargar1();
 			div.cargar2();
 			div.operar();
 			System.out.println("El resultado de la division es:");
 			div.mostrarResultado();
+		}
+		else {
+			System.out.println("Opcion invalida");
 		}
 
 	}

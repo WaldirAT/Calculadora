@@ -1,9 +1,11 @@
-package operaciones;
+package ws.synopsis.operations;
 
 public class Division extends Operacion {
 
 	public void operar() {
-		resultado = valor1 / valor2;
+
+		resultado = num1 / num2;
+
 	}
 
 }
